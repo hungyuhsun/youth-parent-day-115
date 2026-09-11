@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>臺中市青年高級中學 115學年度親師座談會家長手冊</title>
   <meta name="description" content="青年高中115學年度親師座談會家長手冊：校長給家長的一封信、升學金榜、技能檢定成就、教務與學務重要章程、反毒宣導專題、高中生SEL情緒陪伴、圖書館行事曆、處室分機速查、原始文件與簡報下載、線上回饋單。">
-  <link rel="stylesheet" href="styles.css?v=3.1">
+  <link rel="stylesheet" href="styles.css?v=3.2">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
 </head>
 <body>
@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <!-- 主導航列 -->
+  <!-- 主導航列 (分層下拉架構) -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#hero" class="brand">
@@ -50,16 +50,53 @@
       </a>
       <button class="mobile-toggle" id="mobileToggle" aria-label="切換選單">☰</button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#principal" class="nav-link">校長的話</a></li>
-        <li><a href="#six-pillars" class="nav-link">青中六有</a></li>
-        <li><a href="#overseas-parents" class="nav-link nav-link-overseas">🌏 國際僑生</a></li>
-        <li><a href="#honors" class="nav-link">榮譽榜</a></li>
-        <li><a href="#departments" class="nav-link">處室報告</a></li>
-        <li><a href="#anti-drug" class="nav-link">🛡️ 反毒宣導</a></li>
-        <li><a href="#guidance-sel" class="nav-link">心靈補給</a></li>
-        <li><a href="#downloads" class="nav-link">📥 文件下載</a></li>
-        <li><a href="#contacts" class="nav-link">分機速查</a></li>
-        <li><a href="#feedback" class="nav-link nav-btn-feedback">✍️ 線上回饋</a></li>
+        <!-- 分類 1: 學校願景 -->
+        <li class="nav-item-dropdown">
+          <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            <span>🏫 學校願景</span>
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#principal" class="dropdown-link"><span class="drop-icon">📖</span> 校長的話</a></li>
+            <li><a href="#six-pillars" class="dropdown-link"><span class="drop-icon">🌟</span> 青中六有</a></li>
+            <li><a href="#honors" class="dropdown-link"><span class="drop-icon">🏆</span> 升學榮譽榜</a></li>
+          </ul>
+        </li>
+
+        <!-- 分類 2: 專案與輔導 -->
+        <li class="nav-item-dropdown">
+          <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            <span>🛡️ 專案與輔導</span>
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#anti-drug" class="dropdown-link"><span class="drop-icon">🛡️</span> 反毒增能宣導</a></li>
+            <li><a href="#guidance-sel" class="dropdown-link"><span class="drop-icon">💡</span> 心靈補給 (SEL)</a></li>
+            <li><a href="#overseas-parents" class="dropdown-link highlight-overseas"><span class="drop-icon">🌏</span> 國際僑生專區</a></li>
+          </ul>
+        </li>
+
+        <!-- 分類 3: 校務規章 -->
+        <li class="nav-item-dropdown">
+          <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            <span>📋 校務規章</span>
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#departments" class="dropdown-link"><span class="drop-icon">🏢</span> 處室重點報告</a></li>
+            <li><a href="#contacts" class="dropdown-link"><span class="drop-icon">📞</span> 處室分機速查</a></li>
+          </ul>
+        </li>
+
+        <!-- 獨立捷徑: 文件下載 -->
+        <li>
+          <a href="#downloads" class="nav-link"><span class="nav-icon">📥</span> 文件下載</a>
+        </li>
+
+        <!-- 獨立行動按鈕: 線上回饋單 -->
+        <li>
+          <a href="#feedback" class="nav-link nav-btn-feedback">✍️ 線上回饋</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -1512,6 +1549,75 @@
     </div>
   </footer>
 
+  <!-- 右側浮動章節電梯 (TOC Chapter Elevator) -->
+  <aside class="chapter-elevator" id="chapterElevator" aria-label="章節快速導航">
+    <div class="elevator-header">
+      <span class="elevator-badge">導航</span>
+    </div>
+    <ul class="elevator-list">
+      <li>
+        <a href="#principal" class="elevator-item" data-target="principal" title="校長的話">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">📖 校長的話</span>
+        </a>
+      </li>
+      <li>
+        <a href="#six-pillars" class="elevator-item" data-target="six-pillars" title="青中六有">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">🌟 青中六有</span>
+        </a>
+      </li>
+      <li>
+        <a href="#overseas-parents" class="elevator-item" data-target="overseas-parents" title="國際僑生專區">
+          <span class="elevator-dot dot-overseas"></span>
+          <span class="elevator-label">🌏 國際僑生</span>
+        </a>
+      </li>
+      <li>
+        <a href="#honors" class="elevator-item" data-target="honors" title="升學與技藝榮譽">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">🏆 升學榮譽</span>
+        </a>
+      </li>
+      <li>
+        <a href="#departments" class="elevator-item" data-target="departments" title="各處室重點報告">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">🏢 處室報告</span>
+        </a>
+      </li>
+      <li>
+        <a href="#anti-drug" class="elevator-item" data-target="anti-drug" title="反毒增能宣導專題">
+          <span class="elevator-dot dot-alert"></span>
+          <span class="elevator-label">🛡️ 反毒宣導</span>
+        </a>
+      </li>
+      <li>
+        <a href="#guidance-sel" class="elevator-item" data-target="guidance-sel" title="心靈補給 SEL">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">💡 心靈補給</span>
+        </a>
+      </li>
+      <li>
+        <a href="#downloads" class="elevator-item" data-target="downloads" title="手冊簡報下載">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">📥 文件下載</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contacts" class="elevator-item" data-target="contacts" title="處室分機速查">
+          <span class="elevator-dot"></span>
+          <span class="elevator-label">📞 分機速查</span>
+        </a>
+      </li>
+      <li>
+        <a href="#feedback" class="elevator-item" data-target="feedback" title="線上意見回饋">
+          <span class="elevator-dot dot-feedback"></span>
+          <span class="elevator-label">✍️ 線上回饋</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
   <!-- 浮動按鈕 (回頂端 & 線上填單捷徑) -->
   <div class="float-actions">
     <a href="#feedback" class="float-btn float-feedback" title="填寫線上回饋單">✍️</a>
@@ -1535,6 +1641,6 @@
   <script>
     window.ADMISSIONS_DATA = [{"dept": "920", "class_no": "廖泳勳", "name": "國立臺中教育大學", "school": "文化創意產業設計與營運學系", "major": "臺中市溪南國中", "junior": ""}, {"dept": "日-綜高體育", "class_no": "920", "name": "黃健宸", "school": "國立東華大學", "major": "民族發展與社會工作學系民族發展組", "junior": "臺中市中平國中"}, {"dept": "日-綜高體育", "class_no": "920", "name": "劉宥鋒", "school": "國立體育大學", "major": "適應體育學系", "junior": "臺中市四育國中"}, {"dept": "日-綜高體育", "class_no": "920", "name": "陳楷恩", "school": "國立臺灣體育運動大學", "major": "休閒運動學系", "junior": "臺中市四育國中"}, {"dept": "日-綜高體育", "class_no": "920", "name": "徐振武", "school": "國立宜蘭大學", "major": "土木工程學系", "junior": "臺中市大墩國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "陳綾", "school": "國立暨南國際大學", "major": "護理學系", "junior": "南投縣宏仁國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "陳妤涵", "school": "國立臺中科技大學", "major": "護理系", "junior": "臺中市光復國中(小)"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "劉又嘉", "school": "國立臺中科技大學", "major": "護理系", "junior": "臺中市漢口國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "劉家容", "school": "國立臺中科技大學", "major": "護理系", "junior": "臺中市居仁國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "呂淙宇", "school": "國立虎尾科技大學", "major": "環境科學與生物科技系", "junior": "臺中市大明高中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "林丞", "school": "國立虎尾科技大學", "major": "環境科學與生物科技系", "junior": ""}, {"dept": "日-餐飲", "class_no": "924", "name": "洪御玹", "school": "國立高雄餐旅大學", "major": "中餐廚藝系（專班）", "junior": "臺中市長億高中"}, {"dept": "日-美容", "class_no": "925", "name": "徐子諳", "school": "國立屏東科技大學", "major": "時尚設計與管理系", "junior": "臺中市北新國中"}, {"dept": "日-音樂", "class_no": "926", "name": "賴義翔", "school": "國立臺灣藝術大學", "major": "音樂學系", "junior": ""}, {"dept": "日-音樂", "class_no": "926", "name": "葉芳瑜", "school": "臺北市立大學", "major": "音樂學系", "junior": "臺中市清水國中"}, {"dept": "日-音樂", "class_no": "926", "name": "葉芳瑜", "school": "國立高雄師範大學", "major": "音樂學系", "junior": "臺中市清水國中"}, {"dept": "日-音樂", "class_no": "926", "name": "葉芳瑜", "school": "國立臺灣藝術大學", "major": "音樂學系", "junior": "臺中市清水國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄭琮翰", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "南投縣南崗國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "陳宣蓉", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "臺中市中山國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "黃紜倪", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "臺中市豐陽國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄞勝文", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "屏東縣陸興高中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "林昀蓁", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "臺中市大里高中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "陳羿璇", "school": "國立臺灣戲曲學院", "major": "客家戲學系", "junior": "新竹市育賢國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄭琮翰", "school": "國立臺灣體育運動大學", "major": "舞蹈學系舞蹈專業組", "junior": "南投縣南崗國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "林呈諺", "school": "國立臺北藝術大學", "major": "戲劇學系", "junior": "臺中市烏日國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄞勝文", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "屏東縣陸興高中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "林呈諺", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "臺中市烏日國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "陳星瑜", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "臺中市向上國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "王家頡", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "屏東縣潮州國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "陳宜楨", "school": "國立臺灣戲曲學院", "major": "歌仔戲學系", "junior": "彰化縣花壇國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "陳宜楨", "school": "國立臺灣戲曲學院", "major": "劇場藝術系", "junior": "彰化縣花壇國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "徐毅傑", "school": "臺北市立大學", "major": "運動藝術學系龍獅運動組", "junior": "臺中市豐陽國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "高怡仙", "school": "國立彰化師範大學", "major": "高齡健康促進與照護管理原住民專班", "junior": "南投縣埔里國中"}, {"dept": "日-實汽", "class_no": "932", "name": "張竣荃", "school": "國立虎尾科技大學", "major": "車輛工程系", "junior": "臺中市長億高中"}, {"dept": "日-水電", "class_no": "933", "name": "謝旻祐", "school": "國立高雄科技大學", "major": "機電工程系智慧自動化組", "junior": "臺中市成功國中"}, {"dept": "日-水電", "class_no": "933", "name": "江明聰", "school": "國立聯合大學", "major": "光電工程學系", "junior": "臺中市光復國中(小)"}, {"dept": "日-水電", "class_no": "934", "name": "林槿洋", "school": "國立高雄科技大學", "major": "電子工程系（第一校區）", "junior": "臺中市光正國中"}, {"dept": "日-水電", "class_no": "934", "name": "陳洺億", "school": "國立虎尾科技大學", "major": "飛機工程系航空電子組", "junior": "臺中市立人國中"}];
   </script>
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=3.2"></script>
 </body>
 </html>

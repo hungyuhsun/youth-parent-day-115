@@ -29,22 +29,52 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("font-btn-lg")?.addEventListener("click", () => setFontSize("lg"));
   document.getElementById("font-btn-xl")?.addEventListener("click", () => setFontSize("xl"));
 
-  // 2. 行動版選單切換
+  // 2. 行動版與下拉選單控制 (包含行動端手風琴折疊)
   const mobileToggle = document.getElementById("mobileToggle");
   const navMenu = document.getElementById("navMenu");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener("click", function () {
       navMenu.classList.toggle("show");
     });
-
-    // 點擊選單連結後自動關閉
-    navMenu.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("show");
-      });
-    });
   }
+
+  // 手機版下拉選單點擊展開/收合 (手風琴效果)
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const parent = this.closest(".nav-item-dropdown");
+      if (!parent) return;
+
+      const isOpen = parent.classList.contains("open");
+      // 關閉其他已展開的下拉
+      document.querySelectorAll(".nav-item-dropdown").forEach((el) => {
+        if (el !== parent) el.classList.remove("open");
+      });
+
+      if (isOpen) {
+        parent.classList.remove("open");
+      } else {
+        parent.classList.add("open");
+      }
+    });
+  });
+
+  // 點擊頁面其他地方關閉下拉
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-item-dropdown")) {
+      document.querySelectorAll(".nav-item-dropdown").forEach((el) => el.classList.remove("open"));
+    }
+  });
+
+  // 點擊任意選單連結後自動關閉行動版選單
+  document.querySelectorAll(".nav-link:not(.dropdown-toggle), .dropdown-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu?.classList.remove("show");
+      document.querySelectorAll(".nav-item-dropdown").forEach((el) => el.classList.remove("open"));
+    });
+  });
 
   // 3. 處室 Tab 切換控制
   const tabButtons = document.querySelectorAll(".tab-button");
@@ -261,5 +291,52 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // 10. 右側浮動章節電梯 (ScrollSpy 滾動監聽與自動高亮)
+  const elevatorItems = document.querySelectorAll(".elevator-item");
+  const sections = Array.from(elevatorItems)
+    .map((item) => {
+      const targetId = item.getAttribute("data-target");
+      const el = document.getElementById(targetId);
+      return el ? { id: targetId, element: el, link: item } : null;
+    })
+    .filter(Boolean);
+
+  function updateElevatorScrollSpy() {
+    if (sections.length === 0) return;
+
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const scrollBottom = scrollY + windowHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    // 若已滾動至頁面最底端附近，高亮最後一個項目
+    if (docHeight - scrollBottom < 80) {
+      elevatorItems.forEach((item) => item.classList.remove("active"));
+      sections[sections.length - 1].link.classList.add("active");
+      return;
+    }
+
+    let activeSection = null;
+    const probe = scrollY + 180; // 檢測線
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sec = sections[i];
+      const top = sec.element.offsetTop;
+      if (probe >= top) {
+        activeSection = sec;
+        break;
+      }
+    }
+
+    elevatorItems.forEach((item) => item.classList.remove("active"));
+    if (activeSection) {
+      activeSection.link.classList.add("active");
+    }
+  }
+
+  window.addEventListener("scroll", updateElevatorScrollSpy, { passive: true });
+  updateElevatorScrollSpy();
 });
+
 
