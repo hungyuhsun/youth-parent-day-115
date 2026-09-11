@@ -77,11 +77,13 @@ body {
 }
 
 .topbar .container {
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  padding: 0 24px;
 }
 
 .topbar-info {
@@ -186,72 +188,96 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   color: var(--dark);
+  flex-shrink: 0;
 }
 
 .brand-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, var(--primary), #2563eb);
   color: white;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 1.25rem;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  flex-shrink: 0;
 }
 
 .brand-text h1 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--primary-dark);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .brand-text span {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--gray-600);
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 6px;
+  gap: 3px;
   align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--gray-700);
   font-weight: 600;
-  font-size: 0.92rem;
-  padding: 8px 14px;
+  font-size: 0.88rem;
+  padding: 6px 9px;
   border-radius: 8px;
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-link:hover {
   color: var(--primary);
   background: var(--primary-bg);
+}
+
+.nav-link-overseas {
+  color: #0284c7 !important;
+  font-weight: 700;
+}
+
+.nav-link-overseas:hover {
+  background: #e0f2fe !important;
 }
 
 .nav-btn-highlight {
@@ -271,7 +297,9 @@ body {
 .nav-btn-feedback {
   background: linear-gradient(135deg, var(--accent), #b45309);
   color: white !important;
+  padding: 6px 12px;
   box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  font-weight: 700;
 }
 
 .nav-btn-feedback:hover {
@@ -1571,7 +1599,29 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+/* 中型筆電與螢幕適配 (1121px ~ 1320px) */
+@media (min-width: 1121px) and (max-width: 1320px) {
+  .nav-container {
+    padding: 8px 16px;
+    gap: 8px;
+  }
+  .nav-menu {
+    gap: 2px;
+  }
+  .nav-link {
+    padding: 5px 7px;
+    font-size: 0.83rem;
+  }
+  .brand-text h1 {
+    font-size: 1.05rem;
+  }
+  .brand-text span {
+    font-size: 0.72rem;
+  }
+}
+
+/* 平板與較小螢幕：自動切換為漢堡選單 (<= 1120px) */
+@media (max-width: 1120px) {
   .mobile-toggle {
     display: block;
   }
@@ -1582,14 +1632,30 @@ body {
     right: 0;
     background: white;
     flex-direction: column;
-    padding: 20px;
+    padding: 16px 20px;
     box-shadow: var(--shadow-lg);
     display: none;
     border-top: 1px solid var(--gray-200);
+    max-height: 80vh;
+    overflow-y: auto;
+    gap: 6px;
   }
   .nav-menu.show {
     display: flex;
   }
+  .nav-menu li {
+    width: 100%;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
   .hero-content h2 {
     font-size: 2rem;
   }
