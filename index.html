@@ -5,24 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>臺中市青年高級中學 115學年度親師座談會家長手冊</title>
   <meta name="description" content="青年高中115學年度親師座談會家長手冊：校長給家長的一封信、升學金榜、技能檢定成就、教務與學務重要章程、反毒宣導專題、高中生SEL情緒陪伴、圖書館行事曆、處室分機速查、原始文件與簡報下載、線上回饋單。">
-  <link rel="stylesheet" href="styles.css?v=2.1">
+  <link rel="stylesheet" href="styles.css?v=3.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
 </head>
 <body>
 
-  <!-- 頂部便利列 (字級調整 / 日期 / 捷徑) -->
+  <!-- 頂部便利列 (語言切換 / 字級調整 / 日期) -->
   <div class="topbar">
     <div class="container">
       <div class="topbar-info">
         <span class="topbar-badge">115 學年度</span>
         <span>📅 座談會時間：115年9月12日（星期六）08:30 - 11:30</span>
-        <span>🏫 青年高中校區（大里區中興路一段138號）</span>
       </div>
-      <div class="font-size-ctrl">
-        <span style="font-size: 0.8rem; color: #94a3b8;">字體大小：</span>
-        <button class="font-btn active" id="font-btn-md">標準</button>
-        <button class="font-btn" id="font-btn-lg">大字</button>
-        <button class="font-btn" id="font-btn-xl">特大</button>
+      <div class="topbar-right">
+        <!-- 多國語言即時翻譯切換 (支援東南亞僑生家長) -->
+        <div class="lang-switcher" title="選擇語言 / Select Language">
+          <span style="font-size: 0.8rem; color: #94a3b8;">🌏 語言：</span>
+          <button class="lang-btn active" data-lang="zh-TW">🇹🇼 中文</button>
+          <button class="lang-btn" data-lang="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-btn" data-lang="id">🇮🇩 Indonesia</button>
+          <button class="lang-btn" data-lang="en">🇵🇭 English</button>
+          <button class="lang-btn" data-lang="my">🇲🇲 မြန်မာ</button>
+          <button class="lang-btn" data-lang="km">🇰🇭 ភាសាខ្មែរ</button>
+        </div>
+        <div class="font-size-ctrl">
+          <span style="font-size: 0.8rem; color: #94a3b8;">字體：</span>
+          <button class="font-btn active" id="font-btn-md">標準</button>
+          <button class="font-btn" id="font-btn-lg">大字</button>
+          <button class="font-btn" id="font-btn-xl">特大</button>
+        </div>
       </div>
     </div>
   </div>
@@ -41,6 +52,7 @@
       <ul class="nav-menu" id="navMenu">
         <li><a href="#principal" class="nav-link">校長的話</a></li>
         <li><a href="#six-pillars" class="nav-link">青中六有</a></li>
+        <li><a href="#overseas-parents" class="nav-link" style="color: #0284c7; font-weight: 700;">🌏 國際僑生</a></li>
         <li><a href="#honors" class="nav-link">榮譽榜</a></li>
         <li><a href="#departments" class="nav-link">處室報告</a></li>
         <li><a href="#anti-drug" class="nav-link">🛡️ 反毒宣導</a></li>
@@ -296,6 +308,73 @@
             <p class="pillar-card-desc">精進專業技能、落實務實致用，一人一證照行行出狀元。</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌏 國際教育與東南亞僑生專班・致海外家長專區 -->
+  <section class="section-spacing overseas-section" id="overseas-parents">
+    <div class="container">
+      <div class="overseas-header">
+        <div class="country-flags-strip">
+          <span class="country-flag-badge">🇵🇭 Philippines 菲律賓</span>
+          <span class="country-flag-badge">🇮🇩 Indonesia 印尼</span>
+          <span class="country-flag-badge">🇻🇳 Vietnam 越南</span>
+          <span class="country-flag-badge">🇲🇲 Myanmar 緬甸</span>
+          <span class="country-flag-badge">🇰🇭 Cambodia 柬埔寨</span>
+        </div>
+        <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; color: #fff;">
+          🌏 致東南亞僑生家長：安心託付・攜手相伴
+        </h2>
+        <p style="font-size: 1.1rem; color: #cbd5e1; line-height: 1.8;">
+          親愛的海外家長您好！感謝您跨越千里將孩子交付青年高中。學校提供全方位的生活住宿照顧、專業技能培訓與多元文化關懷，陪伴孩子在臺灣安心求學、茁壯成長！
+        </p>
+        <p style="font-size: 0.95rem; color: #fbbf24; margin-top: 8px;">
+          💡 提示：點擊網頁頂部【🌏 語言 / Language】按鈕，可將全站即時翻譯為您的母語（Tiếng Việt / Bahasa Indonesia / English / မြန်မာ / ភាសាខ្មែរ）！
+        </p>
+      </div>
+
+      <div class="overseas-grid">
+        <!-- 1. 住宿生活照顧 -->
+        <div class="overseas-card">
+          <div class="overseas-card-icon">🏠</div>
+          <h4 class="overseas-card-title">專職宿舍與生活起居照顧</h4>
+          <p class="overseas-card-desc">
+            學校宿舍派任男舍、女舍專職輔導老師，全天候照護學生生活起居與常規。校內健康中心提供醫療照護，營養餐廳供應均衡膳食，嚴格門禁管制守護學生安全。
+          </p>
+          <span class="overseas-card-en">Dedicated dormitory teachers, health clinic care, balanced meals, and 24/7 security for complete peace of mind.</span>
+        </div>
+
+        <!-- 2. 專業技能與證照 -->
+        <div class="overseas-card">
+          <div class="overseas-card-icon">⚙️</div>
+          <h4 class="overseas-card-title">產學攜手培育・一人一證照</h4>
+          <p class="overseas-card-desc">
+            實習處國際組量身打造專業技術養成方案，結合現代化工場與企業產學實習，輔導每位僑生取得中華民國國家級技術士證照，為未來在臺升學與就業奠定堅強基礎。
+          </p>
+          <span class="overseas-card-en">Industry-academia partnership, practical factory training, national skill certifications, and bright future pathways.</span>
+        </div>
+
+        <!-- 3. 文化節慶與關懷 -->
+        <div class="overseas-card">
+          <div class="overseas-card-icon">🎉</div>
+          <h4 class="overseas-card-title">國際文化週・多元溫暖校園</h4>
+          <p class="overseas-card-desc">
+            每年四月盛大辦理「國際文化週」，歡慶傳統新年潑水節、各國美食文化交流與多語交流活動。老師同理關懷思鄉之情，營造如家一般溫馨融洽的學習環境。
+          </p>
+          <span class="overseas-card-en">Annual International Cultural Week, Songkran Water Festival, traditional foods, and a warm family-like atmosphere.</span>
+        </div>
+      </div>
+
+      <!-- 國際組專屬聯絡資訊 -->
+      <div class="overseas-contact-box">
+        <h4>📞 實習處國際組・海外家長專屬聯繫窗口</h4>
+        <p>
+          若您想了解孩子在校學習或生活狀況，歡迎隨時與本校國際組師長聯繫：<br>
+          • <strong>實習處國際組電話：</strong>+886-4-2496-3333 分機 <strong>968</strong> 或 <strong>962</strong><br>
+          • <strong>24小時校安緊急守護專線：</strong>+886-4-2496-2110<br>
+          • <strong>學校官方通訊：</strong>官方 Facebook 粉絲團與 LINE 帳號（請點選頁尾連結隨時留言諮詢）
+        </p>
       </div>
     </div>
   </section>
@@ -1439,10 +1518,23 @@
     <a href="#hero" class="float-btn" id="backToTop" title="回到頂部" style="display: none;">▲</a>
   </div>
 
+  <!-- Google Website Translator API (支援東南亞僑生多語即時翻譯) -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'zh-TW,vi,id,en,tl,my,km',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <!-- 注入升學榜單 JSON 資料並加載腳本 -->
   <script>
     window.ADMISSIONS_DATA = [{"dept": "920", "class_no": "廖泳勳", "name": "國立臺中教育大學", "school": "文化創意產業設計與營運學系", "major": "臺中市溪南國中", "junior": ""}, {"dept": "日-綜高體育", "class_no": "920", "name": "黃健宸", "school": "國立東華大學", "major": "民族發展與社會工作學系民族發展組", "junior": "臺中市中平國中"}, {"dept": "日-綜高體育", "class_no": "920", "name": "劉宥鋒", "school": "國立體育大學", "major": "適應體育學系", "junior": "臺中市四育國中"}, {"dept": "日-綜高體育", "class_no": "920", "name": "陳楷恩", "school": "國立臺灣體育運動大學", "major": "休閒運動學系", "junior": "臺中市四育國中"}, {"dept": "日-綜高體育", "class_no": "920", "name": "徐振武", "school": "國立宜蘭大學", "major": "土木工程學系", "junior": "臺中市大墩國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "陳綾", "school": "國立暨南國際大學", "major": "護理學系", "junior": "南投縣宏仁國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "陳妤涵", "school": "國立臺中科技大學", "major": "護理系", "junior": "臺中市光復國中(小)"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "劉又嘉", "school": "國立臺中科技大學", "major": "護理系", "junior": "臺中市漢口國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "劉家容", "school": "國立臺中科技大學", "major": "護理系", "junior": "臺中市居仁國中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "呂淙宇", "school": "國立虎尾科技大學", "major": "環境科學與生物科技系", "junior": "臺中市大明高中"}, {"dept": "日-綜高藥護化工", "class_no": "921", "name": "林丞", "school": "國立虎尾科技大學", "major": "環境科學與生物科技系", "junior": ""}, {"dept": "日-餐飲", "class_no": "924", "name": "洪御玹", "school": "國立高雄餐旅大學", "major": "中餐廚藝系（專班）", "junior": "臺中市長億高中"}, {"dept": "日-美容", "class_no": "925", "name": "徐子諳", "school": "國立屏東科技大學", "major": "時尚設計與管理系", "junior": "臺中市北新國中"}, {"dept": "日-音樂", "class_no": "926", "name": "賴義翔", "school": "國立臺灣藝術大學", "major": "音樂學系", "junior": ""}, {"dept": "日-音樂", "class_no": "926", "name": "葉芳瑜", "school": "臺北市立大學", "major": "音樂學系", "junior": "臺中市清水國中"}, {"dept": "日-音樂", "class_no": "926", "name": "葉芳瑜", "school": "國立高雄師範大學", "major": "音樂學系", "junior": "臺中市清水國中"}, {"dept": "日-音樂", "class_no": "926", "name": "葉芳瑜", "school": "國立臺灣藝術大學", "major": "音樂學系", "junior": "臺中市清水國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄭琮翰", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "南投縣南崗國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "陳宣蓉", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "臺中市中山國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "黃紜倪", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "臺中市豐陽國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄞勝文", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "屏東縣陸興高中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "林昀蓁", "school": "國立臺灣戲曲學院", "major": "民俗技藝系", "junior": "臺中市大里高中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "陳羿璇", "school": "國立臺灣戲曲學院", "major": "客家戲學系", "junior": "新竹市育賢國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄭琮翰", "school": "國立臺灣體育運動大學", "major": "舞蹈學系舞蹈專業組", "junior": "南投縣南崗國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "林呈諺", "school": "國立臺北藝術大學", "major": "戲劇學系", "junior": "臺中市烏日國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "鄞勝文", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "屏東縣陸興高中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "林呈諺", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "臺中市烏日國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "陳星瑜", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "臺中市向上國中"}, {"dept": "日-表演藝術", "class_no": "927", "name": "王家頡", "school": "國立臺灣體育運動大學", "major": "舞蹈系", "junior": "屏東縣潮州國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "陳宜楨", "school": "國立臺灣戲曲學院", "major": "歌仔戲學系", "junior": "彰化縣花壇國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "陳宜楨", "school": "國立臺灣戲曲學院", "major": "劇場藝術系", "junior": "彰化縣花壇國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "徐毅傑", "school": "臺北市立大學", "major": "運動藝術學系龍獅運動組", "junior": "臺中市豐陽國中"}, {"dept": "日-表演藝術", "class_no": "928", "name": "高怡仙", "school": "國立彰化師範大學", "major": "高齡健康促進與照護管理原住民專班", "junior": "南投縣埔里國中"}, {"dept": "日-實汽", "class_no": "932", "name": "張竣荃", "school": "國立虎尾科技大學", "major": "車輛工程系", "junior": "臺中市長億高中"}, {"dept": "日-水電", "class_no": "933", "name": "謝旻祐", "school": "國立高雄科技大學", "major": "機電工程系智慧自動化組", "junior": "臺中市成功國中"}, {"dept": "日-水電", "class_no": "933", "name": "江明聰", "school": "國立聯合大學", "major": "光電工程學系", "junior": "臺中市光復國中(小)"}, {"dept": "日-水電", "class_no": "934", "name": "林槿洋", "school": "國立高雄科技大學", "major": "電子工程系（第一校區）", "junior": "臺中市光正國中"}, {"dept": "日-水電", "class_no": "934", "name": "陳洺億", "school": "國立虎尾科技大學", "major": "飛機工程系航空電子組", "junior": "臺中市立人國中"}];
   </script>
-  <script src="app.js?v=2.1"></script>
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>

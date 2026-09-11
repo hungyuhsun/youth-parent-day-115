@@ -117,9 +117,61 @@ body {
   transition: var(--transition);
 }
 
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.lang-btn:hover, .lang-btn.active {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  color: white;
+}
+
 .font-btn:hover, .font-btn.active {
   background: var(--accent);
   border-color: var(--accent);
+}
+
+/* 隱藏 Google Translate 的原生橫幅 */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0 !important;
 }
 
 /* 主導航 */
@@ -1798,6 +1850,134 @@ body {
   }
   .pillar-card-title {
     font-size: 1rem;
+  }
+}
+
+/* 🌏 東南亞僑生專班・致海外家長專區樣式 */
+.overseas-section {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3a8a 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.overseas-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.2) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.overseas-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 35px;
+  position: relative;
+  z-index: 1;
+}
+
+.country-flags-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.country-flag-badge {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f8fafc;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.overseas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.overseas-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: var(--transition);
+}
+
+.overseas-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-4px);
+  border-color: var(--accent-light);
+}
+
+.overseas-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+.overseas-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.overseas-card-desc {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.overseas-card-en {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 8px;
+  display: block;
+}
+
+.overseas-contact-box {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.overseas-contact-box h4 {
+  color: #fef08a;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.overseas-contact-box p {
+  color: #f1f5f9;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .overseas-grid {
+    grid-template-columns: 1fr;
   }
 }
 

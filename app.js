@@ -212,4 +212,54 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // 9. 多國語言即時翻譯控制 (Google Translate API 橋接)
+  const langBtns = document.querySelectorAll(".lang-btn");
+  
+  function applyLanguage(langCode) {
+    // 寫入 Google Translate cookie
+    const domain = window.location.hostname;
+    document.cookie = `googtrans=/zh-TW/${langCode}; path=/;`;
+    if (domain && domain !== 'localhost') {
+      document.cookie = `googtrans=/zh-TW/${langCode}; domain=.${domain}; path=/;`;
+    }
+    
+    langBtns.forEach(btn => {
+      if (btn.getAttribute("data-lang") === langCode) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    const combo = document.querySelector(".goog-te-combo");
+    if (combo) {
+      combo.value = langCode;
+      combo.dispatchEvent(new Event("change"));
+    } else {
+      location.reload();
+    }
+  }
+
+  langBtns.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const lang = this.getAttribute("data-lang");
+      applyLanguage(lang);
+    });
+  });
+
+  // 檢查既有語言
+  const match = document.cookie.match(/googtrans=\/zh-TW\/([^;]+)/);
+  if (match && match[1]) {
+    const currentLang = match[1];
+    langBtns.forEach(btn => {
+      if (btn.getAttribute("data-lang") === currentLang) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+  }
 });
+
