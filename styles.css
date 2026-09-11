@@ -198,14 +198,17 @@ body {
 }
 
 .nav-btn-highlight {
-  background: linear-gradient(135deg, #e11d48, #be123c);
-  color: white !important;
-  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+  background: #f8fafc;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1;
+  box-shadow: none;
 }
 
 .nav-btn-highlight:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
+  background: var(--primary-bg);
+  color: var(--primary) !important;
+  border-color: var(--primary-light);
+  transform: none;
 }
 
 .nav-btn-feedback {
