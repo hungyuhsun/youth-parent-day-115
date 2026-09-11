@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <td><span class="badge ${getDeptBadgeClass(item.dept)}">${item.dept}</span></td>
         <td><strong>${item.class_no}</strong></td>
         <td><strong>${item.name}</strong></td>
-        <td style="color: #1e3a8a; font-weight: 700;">${item.school}</td>
+        <td style="color: #c2410c; font-weight: 700;">${item.school}</td>
         <td>${item.major}</td>
         <td style="color: #64748b;">${item.junior || "-"}</td>
       </tr>
