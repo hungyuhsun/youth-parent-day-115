@@ -69,8 +69,9 @@ body {
 }
 
 /* 頂部快捷與導航列 */
+/* 頂部快捷與導航列 (校徽深石墨灰搭配活力橘) */
 .topbar {
-  background: var(--primary-dark);
+  background: #1e293b;
   color: #cbd5e1;
   font-size: 0.85rem;
   padding: 8px 0;
@@ -95,12 +96,13 @@ body {
 }
 
 .topbar-badge {
-  background: var(--accent);
+  background: #ea580c;
   color: #fff;
   padding: 2px 10px;
   border-radius: 20px;
   font-weight: bold;
   font-size: 0.8rem;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.35);
 }
 
 .font-size-ctrl {
@@ -150,14 +152,14 @@ body {
 }
 
 .lang-btn:hover, .lang-btn.active {
-  background: var(--primary-light);
-  border-color: var(--primary-light);
+  background: #ea580c;
+  border-color: #ea580c;
   color: white;
 }
 
 .font-btn:hover, .font-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: #ea580c;
+  border-color: #ea580c;
 }
 
 /* 隱藏 Google Translate 的原生橫幅 */
@@ -503,11 +505,12 @@ body {
 }
 
 /* HERO 主視覺區 */
+/* HERO 主視覺區 - 建議一：校徽活力橘朝陽漸層 */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #0b1f3a 0%, #1e3a8a 60%, #172554 100%);
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 45%, #f97316 80%, #fb923c 100%);
   color: white;
-  padding: 90px 0 100px;
+  padding: 90px 0 105px;
   overflow: hidden;
 }
 
@@ -518,8 +521,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.15) 0%, transparent 45%),
-              radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.25) 0%, transparent 50%);
+  background: radial-gradient(circle at 85% 15%, rgba(254, 240, 138, 0.22) 0%, transparent 45%),
+              radial-gradient(circle at 12% 85%, rgba(154, 52, 18, 0.35) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -538,11 +541,13 @@ body {
   line-height: 1.2;
   margin-bottom: 20px;
   letter-spacing: -0.5px;
+  text-shadow: 0 2px 14px rgba(154, 52, 18, 0.4);
 }
 
 .hero-content h2 span {
-  color: var(--accent-light);
+  color: #fef08a;
   display: inline-block;
+  text-shadow: 0 2px 10px rgba(124, 45, 18, 0.3);
 }
 
 .hero-badge-row {
@@ -553,9 +558,9 @@ body {
 }
 
 .hero-pill {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
   padding: 6px 14px;
   border-radius: 30px;
@@ -567,17 +572,20 @@ body {
 }
 
 .hero-pill.gold {
-  background: rgba(245, 158, 11, 0.25);
-  border-color: rgba(251, 191, 36, 0.6);
-  color: #fef08a;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #c2410c;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .hero-desc {
   font-size: 1.15rem;
-  color: #e2e8f0;
+  color: #fff7ed;
   margin-bottom: 30px;
   max-width: 600px;
   line-height: 1.8;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .hero-actions {
@@ -602,25 +610,28 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), #b45309);
-  color: white;
-  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+  background: #ffffff;
+  color: #c2410c;
+  box-shadow: 0 6px 20px rgba(124, 45, 18, 0.25);
 }
 
 .btn-primary:hover {
+  background: #fff7ed;
+  color: #9a3412;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.5);
+  box-shadow: 0 8px 24px rgba(124, 45, 18, 0.35);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -637,16 +648,16 @@ body {
 
 /* Hero 右側快速資訊卡 */
 .hero-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius-lg);
   padding: 30px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px rgba(124, 45, 18, 0.2);
 }
 
 .hero-card-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   padding-bottom: 18px;
   margin-bottom: 20px;
 }
@@ -677,23 +688,24 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   flex-shrink: 0;
-  color: var(--accent-light);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero-info-text strong {
   display: block;
-  color: #f8fafc;
+  color: #fef08a;
   font-size: 0.95rem;
 }
 
 .hero-info-text span {
-  color: #cbd5e1;
+  color: #ffffff;
   font-size: 0.88rem;
 }
 
